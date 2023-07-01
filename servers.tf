@@ -42,9 +42,9 @@ resource "aws_instance" "cart" {
     Name = "cart"
   }
 }
-resource "aws_route53_record" "catalouge" {
+resource "aws_route53_record" "cart" {
   zone_id = "Z04515993VDC6UY0MH12J"
-  name    = "catalouge-dev.mahadevops.online"
+  name    = "cart-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.frontend.private_ip]
