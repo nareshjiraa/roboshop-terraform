@@ -12,6 +12,13 @@ resource "aws_instance" "frontend" {
     Name = "frontend"
   }
 }
+resource "aws_route53_record" "frontend" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "frontend-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
+}
 resource "aws_instance" "catalouge" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "t3.micro"
@@ -19,6 +26,13 @@ resource "aws_instance" "catalouge" {
   tags = {
     Name = "catalouge"
   }
+}
+resource "aws_route53_record" "catalouge" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "catalouge-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
 }
 resource "aws_instance" "cart" {
   ami           = data.aws_ami.centos.image_id
@@ -28,6 +42,13 @@ resource "aws_instance" "cart" {
     Name = "cart"
   }
 }
+resource "aws_route53_record" "catalouge" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "catalouge-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
+}
 resource "aws_instance" "mysql" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "t3.micro"
@@ -35,6 +56,13 @@ resource "aws_instance" "mysql" {
   tags = {
     Name = "mysql"
   }
+}
+resource "aws_route53_record" "mysql" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "mysql-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
 }
 resource "aws_instance" "rabbitmq" {
   ami           = data.aws_ami.centos.image_id
@@ -44,6 +72,13 @@ resource "aws_instance" "rabbitmq" {
     Name = "rabbitmq"
   }
 }
+resource "aws_route53_record" "rabbitmq" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "rabbitmq-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
+}
 resource "aws_instance" "redis" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "t3.micro"
@@ -51,6 +86,13 @@ resource "aws_instance" "redis" {
   tags = {
     Name = "redis"
   }
+}
+resource "aws_route53_record" "redis" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "redis-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
 }
 resource "aws_instance" "user" {
   ami           = data.aws_ami.centos.image_id
@@ -60,6 +102,13 @@ resource "aws_instance" "user" {
     Name = "user"
   }
 }
+resource "aws_route53_record" "user" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "user-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
+}
 resource "aws_instance" "shipping" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "t3.micro"
@@ -67,6 +116,13 @@ resource "aws_instance" "shipping" {
   tags = {
     Name = "shipping"
   }
+}
+resource "aws_route53_record" "shipping" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "shipping-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
 }
 resource "aws_instance" "mongodb" {
   ami           = data.aws_ami.centos.image_id
@@ -76,6 +132,13 @@ resource "aws_instance" "mongodb" {
     Name = "mongodb"
   }
 }
+resource "aws_route53_record" "mongodb" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "mongodb-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
+}
 resource "aws_instance" "dispatch" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "t3.micro"
@@ -83,5 +146,12 @@ resource "aws_instance" "dispatch" {
   tags = {
     Name = "dispatch"
   }
+}
+resource "aws_route53_record" "dispatch" {
+  zone_id = "Z04515993VDC6UY0MH12J"
+  name    = "dispatch-dev.mahadevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
 }
 
