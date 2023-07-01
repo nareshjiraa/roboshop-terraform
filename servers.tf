@@ -32,7 +32,7 @@ resource "aws_route53_record" "catalouge" {
   name    = "catalouge-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.catalouge.private_ip]
 }
 resource "aws_instance" "cart" {
   ami           = data.aws_ami.centos.image_id
@@ -47,7 +47,7 @@ resource "aws_route53_record" "cart" {
   name    = "cart-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.cart.private_ip]
 }
 resource "aws_instance" "mysql" {
   ami           = data.aws_ami.centos.image_id
@@ -62,7 +62,7 @@ resource "aws_route53_record" "mysql" {
   name    = "mysql-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.mysql.private_ip]
 }
 resource "aws_instance" "rabbitmq" {
   ami           = data.aws_ami.centos.image_id
@@ -77,7 +77,7 @@ resource "aws_route53_record" "rabbitmq" {
   name    = "rabbitmq-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.rabbitmq.private_ip]
 }
 resource "aws_instance" "redis" {
   ami           = data.aws_ami.centos.image_id
@@ -92,7 +92,7 @@ resource "aws_route53_record" "redis" {
   name    = "redis-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.redis.private_ip]
 }
 resource "aws_instance" "user" {
   ami           = data.aws_ami.centos.image_id
@@ -107,7 +107,7 @@ resource "aws_route53_record" "user" {
   name    = "user-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.user.private_ip]
 }
 resource "aws_instance" "shipping" {
   ami           = data.aws_ami.centos.image_id
@@ -122,7 +122,7 @@ resource "aws_route53_record" "shipping" {
   name    = "shipping-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.shipping.private_ip]
 }
 resource "aws_instance" "mongodb" {
   ami           = data.aws_ami.centos.image_id
@@ -137,7 +137,7 @@ resource "aws_route53_record" "mongodb" {
   name    = "mongodb-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.mongodb.private_ip]
 }
 resource "aws_instance" "dispatch" {
   ami           = data.aws_ami.centos.image_id
@@ -152,6 +152,6 @@ resource "aws_route53_record" "dispatch" {
   name    = "dispatch-dev.mahadevops.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.dispatch.private_ip]
 }
 
